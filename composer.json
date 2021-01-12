@@ -1,0 +1,20 @@
+{
+	"name": "smartformer/php-imagetextoverlay",
+	"type": "library",
+	"description": "Library to overlay a text centered over an image",
+	"license": "BSD-3-Clause",
+	"keywords": ["image", "text", "overlay"],
+	"authors": [
+		{
+			"name": "Andre Lohmann",
+			"homepage": "https://github.com/smartformer"
+		}
+	],
+	"require": {
+		"php": ">=7.0"
+	},
+    "autoload": {
+        "psr-4": {"Smartformer\\": "src/Smartformer"}
+    },
+	"minimum-stability": "stable"
+}
