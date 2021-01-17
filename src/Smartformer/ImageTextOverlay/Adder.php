@@ -31,8 +31,8 @@ class Adder {
             $text_width = $text_box[2] - $text_box[0];
             $text_height = $text_box[7] - $text_box[1];     
         }
-        $top = ($image_info[1] / 2) - ($text_height/2);
-        $left = ($image_info[0] / 2) - ($text_width/2);
+        $top = floor(($image_info[1] / 2) - ($text_height/2)) - 1;
+        $left = floor(($image_info[0] / 2) - ($text_width/2));
 
         imagettftext($our_image, $font_size, $angle, $left, $top, $color, $this->fontPath, $text);
         imagejpeg($our_image, $output);
@@ -59,8 +59,8 @@ class Adder {
             $text_width = $text_box[2] - $text_box[0];
             $text_height = $text_box[7] - $text_box[1];     
         }
-        $top = ($image_info[1] / 2) - ($text_height/2);
-        $left = ($image_info[0] / 2) - ($text_width/2);
+        $top = floor(($image_info[1] / 2) - ($text_height/2)) - 1;
+        $left = floor(($image_info[0] / 2) - ($text_width/2));
 
         imagettftext($our_image, $font_size, $angle, $left, $top, $color, $this->fontPath, $text);
         imagepng($our_image, $output);
