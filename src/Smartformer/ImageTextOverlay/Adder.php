@@ -25,13 +25,13 @@ class Adder {
         $text_box = imagettfbbox($font_size, $angle, $this->fontPath, $text);
         $text_width = $text_box[2] - $text_box[0];
         $text_height = $text_box[7] - $text_box[1];     
-        while(($text_width > ($image_info[0] - $padding))) {
+        while(($text_width > ($image_info[0] - (2 * $padding)))) {
             $font_size--;
             $text_box = imagettfbbox($font_size, $angle, $this->fontPath, $text);
             $text_width = $text_box[2] - $text_box[0];
             $text_height = $text_box[7] - $text_box[1];     
         }
-        $top = floor(($image_info[1] / 2) - ($text_height/2)) - 1;
+        $top = floor(($image_info[1] / 2) - ($text_height/2) - ($text_box[1]));
         $left = floor(($image_info[0] / 2) - ($text_width/2));
 
         imagettftext($our_image, $font_size, $angle, $left, $top, $color, $this->fontPath, $text);
@@ -52,14 +52,14 @@ class Adder {
         /* Create text */
         $text_box = imagettfbbox($font_size, $angle, $this->fontPath, $text);
         $text_width = $text_box[2] - $text_box[0];
-        $text_height = $text_box[7] - $text_box[1];     
-        while(($text_width > ($image_info[0] - $padding))) {
+        $text_height = $text_box[7] - $text_box[1];
+        while(($text_width > ($image_info[0] - (2 * $padding)))) {
             $font_size--;
             $text_box = imagettfbbox($font_size, $angle, $this->fontPath, $text);
             $text_width = $text_box[2] - $text_box[0];
-            $text_height = $text_box[7] - $text_box[1];     
+            $text_height = $text_box[7] - $text_box[1];
         }
-        $top = floor(($image_info[1] / 2) - ($text_height/2)) - 1;
+        $top = floor(($image_info[1] / 2) - ($text_height/2) - ($text_box[1]));
         $left = floor(($image_info[0] / 2) - ($text_width/2));
 
         imagettftext($our_image, $font_size, $angle, $left, $top, $color, $this->fontPath, $text);
